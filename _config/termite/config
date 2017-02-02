@@ -1,0 +1,48 @@
+[options]
+font = PragmataPro for Powerline 11
+clickable_url = true
+browser = chromium
+allow_bold = false
+dynamic_title = true
+scrollback_lines = 10000
+cursor_blink = system
+
+[colors]
+
+# special
+foreground      = #dedede
+foreground_bold = #dedede
+cursor          = #dedede
+background      = #121212
+
+# black
+color0  = #929292
+color8  = #bdbdbd
+
+# red
+color1  = #e27373
+color9  = #ffa1a1
+
+# green
+color2  = #94b979
+color10 = #bddeab
+
+# yellow
+color3  = #ffba7b
+color11 = #ffdca0
+
+# blue
+color4  = #97bedc
+color12 = #b1d8f6
+
+# magenta
+color5  = #e1c0fa
+color13 = #fbdaff
+
+# cyan
+color6  = #00988e
+color14 = #1ab2a8
+
+# white
+color7  = #dedede
+color15 = #ffffff

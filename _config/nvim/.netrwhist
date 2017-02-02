@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/peterderuijter'
+let g:netrw_dirhist_2='/home/peterderuijter/Code/backend'
+let g:netrw_dirhist_3='/home/peterderuijter/Code/acre-frontend'
+let g:netrw_dirhist_4='/home/peterderuijter/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/portal_gun-831958d0c607'
+let g:netrw_dirhist_5='/home/peterderuijter/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/portal_gun-831958d0c607/bin'
+let g:netrw_dirhist_6='/home/peterderuijter/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/portal_gun-831958d0c607'
+let g:netrw_dirhist_7='/home/peterderuijter/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/portal_gun-831958d0c607/lib'
+let g:netrw_dirhist_8='/home/peterderuijter/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/portal_gun-831958d0c607/lib/portal_gun'
+let g:netrw_dirhist_9='/home/peterderuijter/Code/backend'

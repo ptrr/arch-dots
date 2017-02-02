@@ -1,0 +1,56 @@
+<monitors version="1">
+  <configuration>
+    <clone>no</clone>
+    <output name="eDP1">
+      <vendor>APP</vendor>
+      <product>Color LCD</product>
+      <serial>0x00000000</serial>
+      <width>2880</width>
+      <height>1800</height>
+      <rate>59.990268707275391</rate>
+      <x>0</x>
+      <y>0</y>
+      <rotation>normal</rotation>
+      <reflect_x>no</reflect_x>
+      <reflect_y>no</reflect_y>
+      <primary>yes</primary>
+      <presentation>no</presentation>
+      <underscanning>no</underscanning>
+    </output>
+  </configuration>
+  <configuration>
+    <clone>no</clone>
+    <output name="DP1">
+      <vendor>APP</vendor>
+      <product>Thunderbolt</product>
+      <serial>C02NK6HUF2GC</serial>
+      <width>2560</width>
+      <height>1440</height>
+      <rate>59.950550079345703</rate>
+      <x>2880</x>
+      <y>0</y>
+      <rotation>normal</rotation>
+      <reflect_x>no</reflect_x>
+      <reflect_y>no</reflect_y>
+      <primary>yes</primary>
+      <presentation>no</presentation>
+      <underscanning>no</underscanning>
+    </output>
+    <output name="eDP1">
+      <vendor>APP</vendor>
+      <product>Color LCD</product>
+      <serial>0x00000000</serial>
+      <width>2880</width>
+      <height>1800</height>
+      <rate>59.990268707275391</rate>
+      <x>0</x>
+      <y>0</y>
+      <rotation>normal</rotation>
+      <reflect_x>no</reflect_x>
+      <reflect_y>no</reflect_y>
+      <primary>no</primary>
+      <presentation>no</presentation>
+      <underscanning>no</underscanning>
+    </output>
+  </configuration>
+</monitors>

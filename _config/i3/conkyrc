@@ -1,0 +1,63 @@
+background        no
+out_to_console 	  yes
+out_to_x	  no
+update_interval	  1
+total_run_times	  0
+short_units	  yes
+pad_percents	  10
+max_text_width 0
+if_up_strictness address
+override_utf8_locale no
+
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 0
+border_width 1
+default_color lightgrey
+default_shade_color lightgrey
+default_outline_color lightgrey
+alignment bottom_middle
+gap_x 20
+gap_y 20
+no_buffers yes
+uppercase no
+use_xft yes
+
+
+TEXT
+[
+
+  ${if_mpd_playing}{ "full_text" : "♬ ${mpd_artist} - ${mpd_title}", "color" : "\#FFCC66"},${endif}  
+  
+  ${if_up enp4s0}{ "full_text" : " ${addr enp4s0} \u2193${downspeedf enp5s0}k \u2191${upspeedf enp4s0}k", "color" : "\#2AA198"},
+  ${else}
+  ${if_up wlp3s0}{ "full_text" : " \u2193${downspeedf wlp3s0}k \u2191${upspeedf wlp3s0}k", "color" : "\#66CCCC"},  
+  ${else}
+  {"full_text": "no connection","color":"\#E59847"},\
+  ${endif}  
+    
+  ${if_existing /sys/class/power_supply/AC0/online 0}
+  {"full_text": "","color":"\"99CC99","separator":false,"separator_block_width":6},\
+  {"full_text": "${if_match ${battery_percent}<20}   ${battery_percent}%","color":"\#f2777a"},\
+  {"full_text":"${else}"},\
+  {"full_text":"${if_match ${battery_percent}<50}   ${battery_percent}%","color":"\#b58900"},\
+  {"full_text":"${else}"},\
+  {"full_text":"${if_match ${battery_percent}==100}   ${battery_percent}%","color":"\#99CC99"},\
+  {"full_text":"${else}"},\
+  {"full_text":"${if_match ${battery_percent}>80}   ${battery_percent}%","color":"\#99CC99"},\
+  {"full_text":"${else}"},\
+  {"full_text":"${if_match ${battery_percent}>=50}   ${battery_percent}%","color":"\#99CC99"},\
+  {"full_text":"${else}"},\
+  {"full_text":"${endif}${endif}${endif}${endif}${endif}"},\
+  ${else}
+  {"full_text": "  ${battery_percent}% ","color":"\#99CC99"},\
+  ${endif}  
+
+  
+  {"full_text":" ${time %a, %b %d}", "color":"\#D3D0C8"},\
+    
+  {"full_text":" ${time %H:%M}", "color":"\#D3D0C8"}\
+
+],
+
