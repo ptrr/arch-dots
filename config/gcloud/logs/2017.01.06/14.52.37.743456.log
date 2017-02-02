@@ -1,0 +1,9 @@
+2017-01-06 14:52:37,745 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2017-01-06 14:52:37,746 ERROR    root            (gcloud.config) too few arguments
+2017-01-06 14:52:37,748 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'config_helper']
+2017-01-06 14:52:37,750 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'set']
+2017-01-06 14:52:37,752 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'get_value']
+2017-01-06 14:52:37,754 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'list']
+2017-01-06 14:52:37,756 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'unset']
+2017-01-06 14:52:37,758 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'configurations']
+2017-01-06 14:52:37,768 DEBUG    root            Metrics reporting process started...

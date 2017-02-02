@@ -1,0 +1,104 @@
+source ~/.dotfiles/config/local.zsh
+source ~/.dotfiles/config/tab_title.zsh
+source ~/.dotfiles/config/git_autocomplete.zsh
+source ~/.dotfiles/config/global.sh
+
+# Define the directories you store your projects in in
+#   ~/.dotfiles/script/personal.zsh
+#
+# PROJECT_PARENT_DIRS+=("$HOME/Projects")
+
+PROJECT_PARENT_DIRS=()
+PROJECT_PARENT_DIRS+=("$HOME/Code")
+
+
+if [[ -f ~/.dotfiles/config/personal.zsh ]]; then
+  source ~/.dotfiles/config/personal.zsh
+fi
+
+if [[ -f ~/.dotfiles/config/personal.sh ]]; then
+  source ~/.dotfiles/config/personal.sh
+fi
+
+for PARENT_DIR in ${PROJECT_PARENT_DIRS[@]} ; do
+  if [ -d "$PARENT_DIR" ]; then
+    for PROJECT_DIR in $(/bin/ls $PARENT_DIR); do
+      if [[ ! -z `which $PROJECT_DIR 2> /dev/null` ]]; then
+        if [ -d "$PARENT_DIR/$PROJECT_DIR" ]; then
+          alias "$PROJECT_DIR"="cd $PARENT_DIR/$PROJECT_DIR"
+        fi
+      fi
+    done
+  fi
+done
+
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.node/bin:$PATH"  
+export NODE_PATH="$HOME/.node/lib/node_modules:$NODE_PATH"  
+export EDITOR="nvim"
+
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=~/Projects
+alias dot='cd ~/.dotfiles'
+
+alias fs='bundle exec foreman start'
+alias be='bundle exec'
+alias bers='be rails s'
+alias berk='be rake'
+alias besq='be sidekiq -C config/sidekiq.yml'
+alias s3='bers -p 4000'
+alias s4='bers -p 4000'
+alias snfr='bers -p 5000'
+alias s88='bers -p 8080'
+
+alias hibernateon="sudo pmset -a hibernatemode 3"
+alias hibernateoff="sudo pmset -a hibernatemode 0"
+
+# alias vim='/Applications/mvim -v'
+alias todo='$EDITOR ~/.todo' 
+alias dc='docker-compose'
+alias hark='be rake'
+alias bu='bundle update'
+alias buc='bu capitalizr'
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+alias vim='nvim'
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /Users/peterderuijter/Downloads/google-cloud-sdk/path.zsh.inc ]; then
+  source '/Users/peterderuijter/Downloads/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /Users/peterderuijter/Downloads/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/Users/peterderuijter/Downloads/google-cloud-sdk/completion.zsh.inc'
+fi
+
+if [ "$0" = "/usr/sbin/lightdm-session" -a "$DESKTOP_SESSION" = "i3" ]; then
+  export $(gnome-keyring-daemon -s)
+fi
+
+SSH_ENV=$HOME/.ssh/environment
+
+# start the ssh-agent
+function start_agent {
+  # spawn ssh-agent
+  /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+  chmod 600 "${SSH_ENV}"
+  . "${SSH_ENV}" > /dev/null
+  /usr/bin/ssh-add
+}
+
+if [ -f "${SSH_ENV}" ]; then
+  . "${SSH_ENV}" > /dev/null
+  ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+  start_agent;
+}
+else
+  start_agent;
+fi

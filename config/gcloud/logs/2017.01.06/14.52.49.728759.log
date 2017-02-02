@@ -1,0 +1,196 @@
+2017-01-06 14:52:49,730 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2017-01-06 14:52:49,732 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'config_helper']
+2017-01-06 14:52:49,733 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'set']
+2017-01-06 14:52:49,734 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'get_value']
+2017-01-06 14:52:49,735 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'list']
+2017-01-06 14:52:49,737 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'unset']
+2017-01-06 14:52:49,738 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'configurations']
+2017-01-06 14:52:49,741 DEBUG    root            Loaded Command Group: ['gcloud', 'help']
+2017-01-06 14:52:49,750 DEBUG    root            Loaded Command Group: ['gcloud', 'init']
+2017-01-06 14:52:49,753 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'configurations', 'create']
+2017-01-06 14:52:49,754 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'configurations', 'activate']
+2017-01-06 14:52:49,756 DEBUG    root            Loaded Command Group: ['gcloud', 'topic']
+2017-01-06 14:52:49,757 DEBUG    root            Loaded Command Group: ['gcloud', 'topic', 'configurations']
+2017-01-06 14:52:49,759 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2017-01-06 14:52:49,761 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'list']
+2017-01-06 14:52:49,764 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2017-01-06 14:52:49,767 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend_services']
+2017-01-06 14:52:49,768 DEBUG    root            Loaded Command Group: ['gcloud', 'components']
+2017-01-06 14:52:49,770 DEBUG    root            Loaded Command Group: ['gcloud', 'components', 'repositories']
+2017-01-06 14:52:49,772 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'regions']
+2017-01-06 14:52:49,818 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'regions', 'list']
+2017-01-06 14:52:49,821 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'zones']
+2017-01-06 14:52:49,822 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'zones', 'list']
+2017-01-06 14:52:49,834 INFO     ___FILE_ONLY___ [m[1mNAME[m
+    gcloud config - view and edit Cloud SDK properties
+
+[m[1mSYNOPSIS[m
+    [mgcloud config[m [4mGROUP[m | [4mCOMMAND[m [[4mGLOBAL-FLAG ...[m]
+
+[m[1mDESCRIPTION[m
+    A configuration is a set of properties that govern the behavior of gcloud
+    and other tools in the Cloud SDK. The SDK provides a configuration named
+    [mdefault[m whose initial properties are set when you run the [mgcloud init[m
+    command. You can create any number of additional named configurations using
+    [mgcloud init[m or [mgcloud config configurations create[m, and switch between
+    configurations using [mgcloud config configurations activate[m.
+
+    gcloud supports several flags that have the same effect as properties in a
+    configuration (for example, gcloud supports both the [m--project[m flag and
+    [mproject[m property). Properties differ from flags in that flags affect
+    command behavior on a per-invocation basis. Properties allow you to
+    maintain the same settings across command executions.
+
+    For more information on configurations, see [mgcloud topic configurations[m.
+
+[m[1mGLOBAL FLAGS[m
+    Run [1m$ gcloud help[m for a description of flags available to all commands.
+
+[m[1mGROUPS[m
+    [m[4mGROUP[m[m is one of the following:
+
+     [1mconfigurations[m
+        Manage the set of gcloud named configurations.
+
+[m[1mCOMMANDS[m
+    [m[4mCOMMAND[m[m is one of the following:
+
+     [1mget-value[m
+        Print the value of a Cloud SDK property.
+
+     [1mlist[m
+        View Cloud SDK properties.
+
+     [1mset[m
+        Set a Cloud SDK property.
+
+     [1munset[m
+        Unset a Cloud SDK property.
+
+[m[1mAVAILABLE PROPERTIES[m
+     [4mcore[m
+         [1maccount[m
+            The account gcloud should use for authentication. You can run
+            [mgcloud auth list[m to see the accounts you currently have available.
+
+         [1mcustom_ca_certs_file[m
+            Absolute path to a custom CA cert file.
+
+         [1mdefault_regional_backend_service[m
+            If True, backend services in [mgcloud compute backend-services[m will
+            be regional by default. The [m--global[m flag will be required for
+            global backend services.
+
+         [1mdisable_color[m
+            If True, color will not be used when printing messages in the
+            terminal.
+
+         [1mdisable_prompts[m
+            If True, the default answer will be assumed for all user prompts.
+            For any prompts that require user input, an error will be raised.
+            This is the equivalent of using the global [m--quiet[m flag.
+
+         [1mdisable_usage_reporting[m
+            If True, anonymous statistics on SDK usage will not be collected.
+            This is value is set based on your choices during installation, but
+            can be changed at any time. For more information, see:
+            https://cloud.google.com/sdk/usage-statistics
+
+         [1mlog_http[m
+            If True, log HTTP requests and responses to the logs. You may need
+            to adjust your [mverbosity[m setting if you want to see in the
+            terminal, otherwise it is available in the log files.
+
+         [1mmax_log_days[m
+            Maximum number of days to retain log files before deleting. If set
+            to 0, turns off log garbage collection and does not delete log
+            files. If unset, defaults to 30.
+
+         [1mpass_credentials_to_gsutil[m
+            If True, pass the configured Cloud SDK authentication to gsutil.
+
+         [1mproject[m
+            The project id of the Cloud Platform project to operate on by
+            default. This can be overridden by using the global [m--project[m flag.
+
+         [1mtrace_token[m
+            Token used to route traces of service requests for investigation of
+            issues. This token will be provided by Google support.
+
+         [1muser_output_enabled[m
+            If False, messages to the user and command output on both standard
+            output and standard error will be suppressed.
+
+         [1mverbosity[m
+            The default logging verbosity for gcloud commands. This is the
+            equivalent of using the global [m--verbosity[m flag.
+
+     [4mapp[m
+         [1mcloud_build_timeout[m
+            The timeout, in seconds, to wait for Docker builds to complete
+            during deployments. All Docker builds now use the Container Builder
+            API.
+
+         [1mstop_previous_version[m
+            If True, when deploying a new version of a service, the previously
+            deployed version is stopped. If False, older versions must be
+            stopped manually.
+
+     [4mcomponent_manager[m
+         [1madditional_repositories[m
+            A comma separated list of additional repositories to check for
+            components. This property is automatically managed by the [mgcloud
+            components repositories[m commands.
+
+         [1mdisable_update_check[m
+            If True, the Cloud SDK will not automatically check for updates.
+
+     [4mcompute[m
+         [1mregion[m
+            The default region to use when working with regional Compute Engine
+            resources. When a [m--region[m flag is required but not provided, the
+            command will fall back to this value, if set. To see valid choices,
+            run [mgcloud compute regions list[m.
+
+         [1mzone[m
+            The default zone to use when working with zonal Compute Engine
+            resources. When a [m--zone[m flag is required but not provided, the
+            command will fall back to this value, if set. To see valid choices,
+            run [mgcloud compute zones list[m.
+
+     [4mcontainer[m
+         [1mbuild_timeout[m
+            The timeout, in seconds, to wait for container builds to complete.
+
+         [1mcluster[m
+            The name of the cluster to use by default when working with
+            Container Engine.
+
+         [1muse_application_default_credentials[m
+            Use application default credentials to authenticate to the cluster
+            API server.
+
+         [1muse_client_certificate[m
+            Use the cluster's client certificate to authenticate to the cluster
+            API server.
+
+     [4mproxy[m
+         [1maddress[m
+            The hostname or IP address of your proxy server.
+
+         [1mpassword[m
+            If your proxy requires authentication, the password to use when
+            connecting.
+
+         [1mport[m
+            The port to use when connected to your proxy server.
+
+         [1mtype[m
+            The type of proxy you are using. Supported proxy types are: [http,
+            http_no_tunnel, socks4, socks5].
+
+         [1musername[m
+            If your proxy requires authentication, the username to use when
+            connecting.
+[m
+2017-01-06 14:52:52,696 DEBUG    root            Metrics reporting process started...
