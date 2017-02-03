@@ -1,5 +1,5 @@
 [options]
-font = PragmataPro for Powerline 11
+font = Hack 11
 clickable_url = true
 browser = chromium
 allow_bold = false

@@ -27,7 +27,6 @@ use_xft yes
 
 TEXT
 [
-
   ${if_mpd_playing}{ "full_text" : "♬ ${mpd_artist} - ${mpd_title}", "color" : "\#FFCC66"},${endif}  
   
   ${if_up enp4s0}{ "full_text" : " ${addr enp4s0} \u2193${downspeedf enp5s0}k \u2191${upspeedf enp4s0}k", "color" : "\#2AA198"},
@@ -37,7 +36,7 @@ TEXT
   {"full_text": "no connection","color":"\#E59847"},\
   ${endif}  
     
-  ${if_existing /sys/class/power_supply/AC0/online 0}
+  ${if_existing /sys/class/power_supply/ADP1/online 1}
   {"full_text": "","color":"\"99CC99","separator":false,"separator_block_width":6},\
   {"full_text": "${if_match ${battery_percent}<20}   ${battery_percent}%","color":"\#f2777a"},\
   {"full_text":"${else}"},\

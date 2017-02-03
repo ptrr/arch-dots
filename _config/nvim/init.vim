@@ -46,7 +46,7 @@ Bundle 'w0ng/vim-hybrid'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'rust-lang/rust.vim'
 Bundle 'racer-rust/vim-racer'
-Bundle 'valloric/YouCompleteMe'
+" Bundle 'valloric/YouCompleteMe'
 Bundle 'posva/vim-vue'
 
 if needsToInstallBundles == 1
@@ -240,7 +240,6 @@ map <leader>n :split %%
 
 let g:pencil_gutter_color = 1      " 0=mono (def), 1=color
 let g:racer_cmd = "/Users/peterderuijter/.cargo/bin/racer"
-let g:ycm_python_binary_path = '/home/peterderuijter/.pyenv/shims/python'
 
 map <leader>l :set list!<CR>
 map <leader>w :set wrap!<CR>
