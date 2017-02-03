@@ -16,8 +16,8 @@ set $down   k
 set $up     l
 set $right  semicolon
 
-gaps inner 2
-gaps outer 2
+gaps inner 10
+gaps outer 5 
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
