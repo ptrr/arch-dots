@@ -7,42 +7,83 @@ dynamic_title = true
 scrollback_lines = 10000
 cursor_blink = system
 
+# [colors]
+# 
+# # special
+# foreground      = #dedede
+# foreground_bold = #dedede
+# cursor          = #dedede
+# background      = #121212
+# 
+# # black
+# color0  = #929292
+# color8  = #bdbdbd
+# 
+# # red
+# color1  = #e27373
+# color9  = #ffa1a1
+# 
+# # green
+# color2  = #94b979
+# color10 = #bddeab
+# 
+# # yellow
+# color3  = #ffba7b
+# color11 = #ffdca0
+# 
+# # blue
+# color4  = #97bedc
+# color12 = #b1d8f6
+# 
+# # magenta
+# color5  = #e1c0fa
+# color13 = #fbdaff
+# 
+# # cyan
+# color6  = #00988e
+# color14 = #1ab2a8
+# 
+# # white
+# color7  = #dedede
+# color15 = #ffffff
+
 [colors]
 
 # special
-foreground      = #dedede
-foreground_bold = #dedede
-cursor          = #dedede
-background      = #121212
+foreground      = #01a7b5
+foreground_bold = #01a7b5
+cursor          = #01a7b5
+background      = #161641
 
 # black
-color0  = #929292
-color8  = #bdbdbd
+color0  = #282a2e
+color8  = #373b41
 
 # red
-color1  = #e27373
-color9  = #ffa1a1
+color1  = #b7275f
+color9  = #cc286b
 
 # green
-color2  = #94b979
-color10 = #bddeab
+color2  = #8aab00
+color10 = #abd302
 
 # yellow
-color3  = #ffba7b
-color11 = #ffdca0
+color3  = #d55600
+color11 = #ff7a21
 
 # blue
-color4  = #97bedc
-color12 = #b1d8f6
+color4  = #058e9e
+color12 = #06a7ba
 
 # magenta
-color5  = #e1c0fa
-color13 = #fbdaff
+color5  = #ab0001
+color13 = #db4041
 
 # cyan
-color6  = #00988e
-color14 = #1ab2a8
+color6  = #341689
+color14 = #7c4ffb
 
 # white
-color7  = #dedede
-color15 = #ffffff
+color7  = #989a99
+color15 = #cacdcc
+

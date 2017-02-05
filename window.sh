@@ -23,5 +23,5 @@ elif xrandr --query | grep "eDP-1 connected"; then
   xrandr --auto --output "eDP-1" --dpi 96 --mode "2880x1800"
 else
   echo "no external monitor found"
-  xrandr --auto --output "eDP1" --dpi 220 --mode "2880x1800"
+  xrandr --auto --output "eDP1" --dpi 127 --mode "2880x1800"
 fi
