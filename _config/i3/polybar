@@ -1,20 +1,22 @@
 [colors]
 background = #000000FF
 # background-alt = #000000FF
-foreground = #E0E0E0
+foreground = #c5c8c6
 foreground-alt = #55
-primary = #b7275f
-secondary = #8aab00
-alert = #bd2c40
-background-alt = #1E1453
+primary = #a54242
+secondary = #5f819d
+alert = #85678f
+
+background-alt = #000000FF
 # foreground-alt= #c82868
 black = #000000
-red = #c82868
-green = #abd302
+red = #a54242
+green = #8c9440
 orange = #d55600
 blue = #61AEEE
 magenta = #db4041
 cyan = #56B6C2
+yellow = #de935f
 lightgray = #ABB2BF
 darkgray = #5C6370
 white = #FFFFFF
@@ -53,12 +55,12 @@ font-1 = Hack:pixelsize=12;0
 
 modules-left = i3
 modules-center = xwindow
-modules-right = wifi volume xkeyboard battery date
+modules-right = wifi volume xkeyboard battery date powermenu
 
 tray-position = right
 tray-padding = 2
 tray-transparent = true
-tray-background = #0063ff00
+tray-background = #0063ffAA
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -93,7 +95,7 @@ label-disconnected-foreground = ${colors.red}
 type = internal/xwindow
 label = %title:0:50:...%
 label-maxlen = 50
-format-underline = #ff0000
+format-underline = ${colors.primary}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -269,7 +271,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = ${colors.cyan}
 
 label = %date% %time%
 
@@ -309,7 +311,7 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.yellow}
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}

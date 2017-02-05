@@ -46,44 +46,84 @@ cursor_blink = system
 # # white
 # color7  = #dedede
 # color15 = #ffffff
+# 
+# [colors]
+# 
+# # special
+# foreground      = #01a7b5
+# foreground_bold = #01a7b5
+# cursor          = #01a7b5
+# background      = #161641
+# 
+# # black
+# color0  = #282a2e
+# color8  = #373b41
+# 
+# # red
+# color1  = #b7275f
+# color9  = #cc286b
+# 
+# # green
+# color2  = #8aab00
+# color10 = #abd302
+# 
+# # yellow
+# color3  = #d55600
+# color11 = #ff7a21
+# 
+# # blue
+# color4  = #058e9e
+# color12 = #06a7ba
+# 
+# # magenta
+# color5  = #ab0001
+# color13 = #db4041
+# 
+# # cyan
+# color6  = #341689
+# color14 = #7c4ffb
+# 
+# # white
+# color7  = #989a99
+# color15 = #cacdcc
 
 [colors]
 
 # special
-foreground      = #01a7b5
-foreground_bold = #01a7b5
-cursor          = #01a7b5
-background      = #161641
+foreground      = #c5c8c6
+foreground_bold = #c5c8c6
+cursor          = #c5c8c6
+background      = #1d1f21
 
 # black
 color0  = #282a2e
 color8  = #373b41
 
 # red
-color1  = #b7275f
-color9  = #cc286b
+color1  = #a54242
+color9  = #cc6666
 
 # green
-color2  = #8aab00
-color10 = #abd302
+color2  = #8c9440
+color10 = #b5bd68
 
 # yellow
-color3  = #d55600
-color11 = #ff7a21
+color3  = #de935f
+color11 = #f0c674
 
 # blue
-color4  = #058e9e
-color12 = #06a7ba
+color4  = #5f819d
+color12 = #81a2be
 
 # magenta
-color5  = #ab0001
-color13 = #db4041
+color5  = #85678f
+color13 = #b294bb
 
 # cyan
-color6  = #341689
-color14 = #7c4ffb
+color6  = #5e8d87
+color14 = #8abeb7
 
 # white
-color7  = #989a99
-color15 = #cacdcc
+color7  = #707880
+color15 = #c5c8c6
 

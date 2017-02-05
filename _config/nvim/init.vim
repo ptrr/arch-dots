@@ -60,7 +60,7 @@ filetype plugin indent on
 " ==========================
 " SETTINGS
 " ==========================
-colorscheme jellybeans
+colorscheme hybrid
 set background=dark
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
@@ -141,7 +141,7 @@ if executable('ag')
 endif
 
 " Colorthings
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'hybrid'
 let g:airline_powerline_fonts = 1
 let g:pencil_higher_contrast_ui = 1
 
