@@ -16,8 +16,8 @@ set $down   k
 set $up     l
 set $right  semicolon
 
-gaps inner 10
-gaps outer 5 
+gaps inner 2
+gaps outer 2
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -26,7 +26,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return workspace $WS1; exec termite
+bindsym $mod+Return workspace $WS1; exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -103,14 +103,14 @@ bindsym Mod4+u border none
 
 # customize workspace name
 set $WS1   "1:   ZSH "
-set $WS2   "2:   Code "
-set $WS3   "3:   Chromium "
+set $WS3   "3:   Editor "
+set $WS2   "2:   Chromium "
 set $WS4   "4:   Files "
 set $WS5   "5:   Documents "
 set $WS6   "6:   Media "
 set $WS7   "7:   Design "
-set $WS8   "8:   Chat "
-set $WS9   "9:   General "
+set $WS9   "9:   Chat "
+set $WS8   "8:   General "
 set $WS0   "10:   Settings "
 
 # switch to workspace
@@ -157,8 +157,9 @@ for_window [class="Gimp"]                           border normal 0
 
 # shortcut applications
 bindsym $mod+F1                 exec gkamus
-bindsym $mod+F2 workspace $WS2; exec subl
-bindsym $mod+F3 workspace $WS3; exec chromium-browser
+bindsym $mod+F2 workspace $WS3; exec subl
+bindsym $mod+Shift+t workspace $WS3; exec "termite -e nvim Code"
+bindsym $mod+F3 workspace $WS2; exec chromium-browser
 bindsym $mod+F4 workspace $WS4; exec nautilus
 bindsym $mod+F5 workspace $WS5; exec evince
 bindsym $mod+F6 workspace $WS6; exec audacious
@@ -173,12 +174,15 @@ bindsym XF86AudioRaiseVolume    exec amixer -q set Master 3%+ unmute
 bindsym XF86AudioMute           exec amixer -q set Master toggle
 
 # assign program to workspace
-assign [class="termite"]              → $WS1
+assign [class="termite"]            → $WS3
+assign [class="Termite"]            → $WS3
+assign [class="Slack"]              → $WS9
+assign [class="telegram-desktop"]   → $WS9
 assign [class="terminal"]           → $WS1
-assign [class="(?i)sublime"]        → $WS2
-assign [class="Gvim"]               → $WS2
-assign [class="Chromium"]           → $WS3
-assign [class="firefox"]            → $WS3
+assign [class="(?i)sublime"]        → $WS8
+assign [class="Gvim"]               → $WS8
+assign [class="Chromium"]           → $WS2
+assign [class="firefox"]            → $WS2
 assign [class="Nautilus"]           → $WS4
 assign [class="Pcmanfm"]            → $WS4
 assign [class="Evince"]             → $WS5
@@ -186,10 +190,10 @@ assign [class="Audacious"]          → $WS6
 assign [class="vlc"]                → $WS6
 assign [class="Gimp"]               → $WS7
 assign [class="Inkscape"]           → $WS7
-assign [class="Hexchat"]            → $WS8
-assign [class="Skype"]              → $WS8
-assign [class="Telegram"]           → $WS8
-assign [class="Upwork"]             → $WS8
+assign [class="Hexchat"]            → $WS9
+assign [class="Skype"]              → $WS9
+assign [class="Telegram"]           → $WS9
+assign [class="Upwork"]             → $WS9
 assign [class="Galculator"]         → $WS9
 assign [class="Gnome-font-viewer"]  → $WS9
 assign [class="Go-for-it"]          → $WS9
@@ -286,8 +290,9 @@ client.background       #212121
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 
-exec_always --no-startup-id ~/.config/i3/polybar.sh
 exec_always ~/.dotfiles/window.sh
 exec_always ~/.fehbg
 exec_always "synclient PalmDetect=1"
+exec_always "synclient MaxTapTime=0"
 exec_always "xmodmap ~/.Xmodmap"
+exec_always --no-startup-id ~/.config/i3/polybar.sh
