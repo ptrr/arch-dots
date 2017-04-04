@@ -67,6 +67,11 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 alias vim='nvim'
 
+alias prod_vpn="cd ~/Code/OpenVPN/Production && sudo openvpn ~/Code/OpenVPN/Production/config.ovpn"
+alias stag_vpn="cd ~/Code/OpenVPN/Staging && sudo openvpn ~/Code/OpenVPN/Staging/config.ovpn"
+
+alias ssh='TERM=xterm-256color ssh'
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
@@ -86,8 +91,7 @@ if [ "$0" = "/usr/sbin/lightdm-session" -a "$DESKTOP_SESSION" = "i3" ]; then
   export $(gnome-keyring-daemon -s)
 fi
 
-SSH_ENV=$HOME/.ssh/environment
-
+SSH_ENV=$HOME/.ssh/environment 
 # start the ssh-agent
 function start_agent {
   # spawn ssh-agent

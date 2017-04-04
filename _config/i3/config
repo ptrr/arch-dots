@@ -5,7 +5,7 @@
 # e: diki1aap@gmail.com
 # dikiaap @ freenode & github
 
-font pango:Hack 10
+font pango:Hack 8
 
 # use win key
 set $mod Mod4
@@ -16,7 +16,7 @@ set $down   k
 set $up     l
 set $right  semicolon
 
-gaps inner 2
+gaps inner 10
 gaps outer 2
 
 # use Mouse+$mod to drag floating windows to their wanted position
@@ -26,7 +26,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return workspace $WS1; exec urxvt
+bindsym $mod+Return workspace $WS1; exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -105,12 +105,13 @@ bindsym Mod4+u border none
 set $WS1   "1:   ZSH "
 set $WS3   "3:   Editor "
 set $WS2   "2:   Chromium "
-set $WS4   "4:   Files "
+set $WS4   "4:   Chat "
 set $WS5   "5:   Documents "
 set $WS6   "6:   Media "
 set $WS7   "7:   Design "
 set $WS9   "9:   Chat "
 set $WS8   "8:   General "
+set $WS9   "9:   Files "
 set $WS0   "10:   Settings "
 
 # switch to workspace
@@ -152,7 +153,7 @@ for_window [class="Galculator"]                     floating enable
 for_window [class="Gcolor2"]                        floating enable
 for_window [class="Gkamus"]                         floating enable
 for_window [class="Go-for-it"]                      floating enable
-for_window [class="Menu"]                           floating enable
+For_window [class="Menu"]                           floating enable
 for_window [class="Gimp"]                           border normal 0
 
 # shortcut applications
@@ -166,7 +167,7 @@ bindsym $mod+F6 workspace $WS6; exec audacious
 bindsym $mod+F7 workspace $WS7; exec gcolor2
 bindsym $mod+F8 workspace $WS8; exec telegram
 bindsym Print                   exec gnome-screenshot
-bindsym $mod+Shift+x            exec "i3lock-fancy -p -t 'Fuck off'"
+bindsym $mod+Shift+x            exec "i3lock-fancy -gp -t 'Fuck off'"
 
 # volume
 bindsym XF86AudioLowerVolume    exec amixer -q set Master 3%- unmute
@@ -174,29 +175,31 @@ bindsym XF86AudioRaiseVolume    exec amixer -q set Master 3%+ unmute
 bindsym XF86AudioMute           exec amixer -q set Master toggle
 
 # assign program to workspace
-assign [class="termite"]            → $WS3
-assign [class="Termite"]            → $WS3
-assign [class="Slack"]              → $WS9
-assign [class="telegram-desktop"]   → $WS9
+assign [class="Termite"]            → $WS1
+assign [class="Subl"]       → $WS3
+assign [class="Slack"]              → $WS4
+assign [class="telegram-desktop"]   → $WS4
 assign [class="terminal"]           → $WS1
 assign [class="(?i)sublime"]        → $WS8
 assign [class="Gvim"]               → $WS8
 assign [class="Chromium"]           → $WS2
 assign [class="firefox"]            → $WS2
-assign [class="Nautilus"]           → $WS4
-assign [class="Pcmanfm"]            → $WS4
+assign [class="Nautilus"]           → $WS9
+assign [class="Pcmanfm"]            → $WS9
 assign [class="Evince"]             → $WS5
 assign [class="Audacious"]          → $WS6
+assign [class="Spotify"]            → $WS6
+assign [class="(?i)spotify"]            → $WS6
 assign [class="vlc"]                → $WS6
 assign [class="Gimp"]               → $WS7
 assign [class="Inkscape"]           → $WS7
-assign [class="Hexchat"]            → $WS9
-assign [class="Skype"]              → $WS9
-assign [class="Telegram"]           → $WS9
-assign [class="Upwork"]             → $WS9
-assign [class="Galculator"]         → $WS9
-assign [class="Gnome-font-viewer"]  → $WS9
-assign [class="Go-for-it"]          → $WS9
+assign [class="Hexchat"]            → $WS4
+assign [class="Skype"]              → $WS4
+assign [class="Telegram"]           → $WS4
+assign [class="Upwork"]             → $WS4
+assign [class="Galculator"]         → $WS4
+assign [class="Gnome-font-viewer"]  → $WS4
+assign [class="Go-for-it"]          → $WS4
 assign [class="Transmission-gtk"]   → $WS9
 assign [class="Bum"]                → $WS0
 assign [class="Bleachbit"]          → $WS0
@@ -221,9 +224,7 @@ bindsym $mod+Shift+o floating enable; resize set 660 px 350 px; sticky enable; m
 bindsym $mod+Shift+p floating enable; resize set 660 px 350 px; sticky enable; move window to position 690 px 380 px
 
 # resize window: 1/2
-bindsym $mod+Shift+v floating enable; resize set 660 px 715 px; sticky enable; move window to position 15 px 15 px
-bindsym $mod+Shift+b floating enable; resize set 1335 px 350 px; sticky enable; move window to position 15 px 380 px
-bindsym $mod+Shift+n floating enable; resize set 1335 px 350 px; sticky enable; move window to position 15 px 15 px
+bindsym $mod+Shift+v floating enable; resize set 660 px 715 px; sticky enable; move window to position 15 px 15 px bindsym $mod+Shift+b floating enable; resize set 1335 px 350 px; sticky enable; move window to position 15 px 380 px bindsym $mod+Shift+n floating enable; resize set 1335 px 350 px; sticky enable; move window to position 15 px 15 px
 bindsym $mod+Shift+m floating enable; resize set 660 px 715 px; sticky enable; move window to position 690 px 15 px
 
 # reload the configuration file
@@ -257,7 +258,7 @@ mode "  " {
 bindsym $mod+r mode "  "
 
 # class                 border  backgr. text    indicator
-client.focused          #2B83A6 #1E1453 #FFFFFF #DDDDDD
+client.focused          #00000000 #61AEEE22 #C5C8C6 #DDDDDD
 client.focused_inactive #212121 #212121 #888888 #292D2E
 client.unfocused        #212121 #212121 #888888 #292D2E
 client.urgent           #2F343A #D64E4E #FFFFFF #D64E4E
@@ -296,3 +297,4 @@ exec_always "synclient PalmDetect=1"
 exec_always "synclient MaxTapTime=0"
 exec_always "xmodmap ~/.Xmodmap"
 exec_always --no-startup-id ~/.config/i3/polybar.sh
+exec xcompmgr -c -f -n

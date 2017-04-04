@@ -1,11 +1,13 @@
 [colors]
 background = #000000FF
 # background-alt = #000000FF
-foreground = #c5c8c6
+# foreground = #c5c8c6
+# foreground = #000000
+foreground = #66FFFFFF
 foreground-alt = #55
 primary = #a54242
 secondary = #5f819d
-alert = #85678f
+alert = #a54242
 
 background-alt = #000000FF
 # foreground-alt= #c82868
@@ -24,6 +26,54 @@ white = #FFFFFF
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
+[bar/mainmybar]
+monitor = ${env:MONITOR:eDP1}
+width = 100%
+height = 27
+offset-x = 0
+offset-y = 0
+
+;background = ${xrdb:color9}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 2
+overline-color = #f00
+underline-size = 2
+underline-color = #000000FF
+
+border-bottom-size = 2
+border-bottom-color = #000000FF
+
+spacing = 1
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = FontAwesome:size=9;0
+font-1 = PragmataPro for Powerline:pixelsize=9;0
+
+modules-left = i3
+modules-center = xwindow
+modules-right = wifi backlight volume xkeyboard battery date powermenu
+
+tray-position = right
+tray-padding = 2
+tray-transparent = true
+tray-background = #0063ffAA
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
 
 [bar/mybar2]
 monitor = ${env:MONITOR:DP2}
@@ -50,8 +100,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = FontAwesome:size=9;0
-font-1 = Hack:pixelsize=9;0
+font-0 = FontAwesome:size=10;0
+font-1 = PragmataPro for Powerline:pixelsize=9;0
 
 modules-left = i3
 modules-center = xwindow
@@ -73,7 +123,7 @@ tray-background = #0063ffAA
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 [bar/mybar]
-;monitor = ${env:MONITOR:DP1}
+monitor = ${env:MONITOR:DP1}
 width = 100%
 height = 27
 offset-x = 0
@@ -98,11 +148,11 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = FontAwesome:size=9;0
-font-1 = Hack:pixelsize=9;0
+font-1 = PragmataPro for Powerline:pixelsize=9;0
 
 modules-left = i3
 modules-center = xwindow
-modules-right = wifi volume xkeyboard battery date powermenu
+modules-right = wifi backlight volume xkeyboard battery date powermenu
 
 tray-position = right
 tray-padding = 2

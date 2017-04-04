@@ -1,5 +1,5 @@
 [options]
-font = Hack 10
+font = PragmataPro for Powerline 10
 clickable_url = true
 browser = chromium
 allow_bold = false
@@ -7,123 +7,46 @@ dynamic_title = true
 scrollback_lines = 10000
 cursor_blink = system
 
-# [colors]
-# 
-# # special
-# foreground      = #dedede
-# foreground_bold = #dedede
-# cursor          = #dedede
-# background      = #121212
-# 
-# # black
-# color0  = #929292
-# color8  = #bdbdbd
-# 
-# # red
-# color1  = #e27373
-# color9  = #ffa1a1
-# 
-# # green
-# color2  = #94b979
-# color10 = #bddeab
-# 
-# # yellow
-# color3  = #ffba7b
-# color11 = #ffdca0
-# 
-# # blue
-# color4  = #97bedc
-# color12 = #b1d8f6
-# 
-# # magenta
-# color5  = #e1c0fa
-# color13 = #fbdaff
-# 
-# # cyan
-# color6  = #00988e
-# color14 = #1ab2a8
-# 
-# # white
-# color7  = #dedede
-# color15 = #ffffff
-# 
-# [colors]
-# 
-# # special
-# foreground      = #01a7b5
-# foreground_bold = #01a7b5
-# cursor          = #01a7b5
-# background      = #161641
-# 
-# # black
-# color0  = #282a2e
-# color8  = #373b41
-# 
-# # red
-# color1  = #b7275f
-# color9  = #cc286b
-# 
-# # green
-# color2  = #8aab00
-# color10 = #abd302
-# 
-# # yellow
-# color3  = #d55600
-# color11 = #ff7a21
-# 
-# # blue
-# color4  = #058e9e
-# color12 = #06a7ba
-# 
-# # magenta
-# color5  = #ab0001
-# color13 = #db4041
-# 
-# # cyan
-# color6  = #341689
-# color14 = #7c4ffb
-# 
-# # white
-# color7  = #989a99
-# color15 = #cacdcc
-
 [colors]
+# hard contrast: background = #1d2021
+background = #282828
+# soft contrast: background = #32302f
+# foreground = #ebdbb2
+foreground = #98971a
+foreground_bold = #ebdbb2
 
-# special
-foreground      = #c5c8c6
-foreground_bold = #c5c8c6
-cursor          = #c5c8c6
-background      = #1d1f21
+# dark0 + gray
+color0 = #282828
+color8 = #928374
 
-# black
-color0  = #282a2e
-color8  = #373b41
+# neutral_red + bright_red
+color1 = #cc241d
+color9 = #fb4934
 
-# red
-color1  = #a54242
-color9  = #cc6666
+# neutral_green + bright_green
+color2 = #98971a
+color10 = #b8bb26
 
-# green
-color2  = #8c9440
-color10 = #b5bd68
+# neutral_yellow + bright_yellow
+color3 = #d79921
+color11 = #fabd2f
 
-# yellow
-color3  = #de935f
-color11 = #f0c674
+# neutral_blue + bright_blue
+color4 = #458588
+color12 = #83a598
 
-# blue
-color4  = #5f819d
-color12 = #81a2be
+# neutral_purple + bright_purple
+color5 = #b16286
+color13 = #d3869b
 
-# magenta
-color5  = #85678f
-color13 = #b294bb
+# neutral_aqua + faded_aqua
+color6 = #689d6a
+color14 = #8ec07c
 
-# cyan
-color6  = #5e8d87
-color14 = #8abeb7
+# light4 + light1
+color7 = #a89984
+color15 = #ebdbb2
 
-# white
-color7  = #707880
-color15 = #c5c8c6
+# vim: ft=dosini cms=#%s
+
 

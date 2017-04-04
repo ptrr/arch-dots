@@ -1,4 +1,8 @@
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+endif
 " This vimrc automatically installs everything it needs.
 " To install, or reinstall, remove ~/.vim directory and open Vim.
 
@@ -41,13 +45,11 @@ Bundle 'morhetz/gruvbox'
 Bundle 'reedes/vim-colors-pencil'
 Bundle 'frankier/neovim-colors-solarized-truecolor-only'
 Bundle 'vim-airline/vim-airline-themes'
-Bundle 'ptrr/pastel-cleanser'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'rust-lang/rust.vim'
 Bundle 'racer-rust/vim-racer'
-" Bundle 'valloric/YouCompleteMe'
 Bundle 'posva/vim-vue'
+Bundle 'Vimjas/vim-python-pep8-indent'
+Bundle 'vim-polyglot'
 
 if needsToInstallBundles == 1
   echo "\nInstalling Bundles, please ignore key map error messages\n"
@@ -60,10 +62,15 @@ filetype plugin indent on
 " ==========================
 " SETTINGS
 " ==========================
-colorscheme hybrid
+colorscheme gruvbox
 set background=dark
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
+
+ " highlight Normal ctermbg=none
+ " highlight NonText ctermbg=none
+ " 
+ " highlight Normal guibg=none
+ " highlight NonText guibg=none
+
 
 if has('gui_running')
   set guifont=PragmataPro\ for\ Powerline:h11
@@ -141,11 +148,8 @@ if executable('ag')
 endif
 
 " Colorthings
-let g:airline_theme = 'hybrid'
+let g:airline_theme = 'gruvbox'
 let g:airline_powerline_fonts = 1
-let g:pencil_higher_contrast_ui = 1
-
-let g:solarized_termcolors=256
 
 set formatprg=par\ -w80\ -q
 
