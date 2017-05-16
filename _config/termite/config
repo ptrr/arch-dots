@@ -1,5 +1,5 @@
 [options]
-font = PragmataPro for Powerline 10
+font = PragmataPro for Powerline 12
 clickable_url = true
 browser = chromium
 allow_bold = false
@@ -9,10 +9,9 @@ cursor_blink = system
 
 [colors]
 # hard contrast: background = #1d2021
-background = #282828
+background = rgba(40, 40, 40, 0.8)
 # soft contrast: background = #32302f
-# foreground = #ebdbb2
-foreground = #98971a
+foreground = #ebdbb2
 foreground_bold = #ebdbb2
 
 # dark0 + gray

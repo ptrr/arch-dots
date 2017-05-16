@@ -167,7 +167,7 @@ bindsym $mod+F6 workspace $WS6; exec audacious
 bindsym $mod+F7 workspace $WS7; exec gcolor2
 bindsym $mod+F8 workspace $WS8; exec telegram
 bindsym Print                   exec gnome-screenshot
-bindsym $mod+Shift+x            exec "i3lock-fancy -gp -t 'Fuck off'"
+bindsym $mod+Shift+x            exec "i3lock-fancy -gp -t 'Fuck off' -- scrot"
 
 # volume
 bindsym XF86AudioLowerVolume    exec amixer -q set Master 3%- unmute

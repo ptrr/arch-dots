@@ -67,6 +67,9 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 alias vim='nvim'
 
+alias acrec='ACRE_ENV=production python'
+alias acres='ACRE_ENV=production gunicorn acre:acre_app -c server.py -b 0.0.0.0:5000'
+
 alias prod_vpn="cd ~/Code/OpenVPN/Production && sudo openvpn ~/Code/OpenVPN/Production/config.ovpn"
 alias stag_vpn="cd ~/Code/OpenVPN/Staging && sudo openvpn ~/Code/OpenVPN/Staging/config.ovpn"
 
