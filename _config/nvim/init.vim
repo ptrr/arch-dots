@@ -1,8 +1,3 @@
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-" If you have vim >=8.0 or Neovim >= 0.1.5
-if (has("termguicolors"))
-endif
 " This vimrc automatically installs everything it needs.
 " To install, or reinstall, remove ~/.vim directory and open Vim.
 
@@ -13,8 +8,7 @@ filetype off
 
 let needsToInstallBundles=0
 if !isdirectory(expand("~/.vim/bundle/vundle"))
-  echo "\nInstalling Vim dependencies... Please be patient!\n"
-  silent !mkdir -p ~/.vim/tmp
+  echo "\nInstalling Vim dependencies... Please be patient!\n" silent !mkdir -p ~/.vim/tmp
   silent !mkdir -p ~/.vim/swap
   silent !mkdir -p ~/.vim/undo
   silent !mkdir -p ~/.vim/bundle
@@ -29,27 +23,20 @@ call vundle#rc()
 " Do these first, because other plugins depend on them
 Bundle 'gmarik/vundle'
 
-Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'gkz/vim-ls'
 Bundle 'kassio/neoterm'
 Bundle 'mileszs/ack.vim'
+Bundle 'rust-lang/rust.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/tir_black'
-Bundle 'vim-airline/vim-airline'
-Bundle 'morhetz/gruvbox'
-Bundle 'reedes/vim-colors-pencil'
 Bundle 'frankier/neovim-colors-solarized-truecolor-only'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'rust-lang/rust.vim'
-Bundle 'racer-rust/vim-racer'
-Bundle 'posva/vim-vue'
-Bundle 'Vimjas/vim-python-pep8-indent'
-Bundle 'vim-polyglot'
+Bundle 'morhetz/gruvbox'
+Bundle 'jacoborus/tender.vim'
 
 if needsToInstallBundles == 1
   echo "\nInstalling Bundles, please ignore key map error messages\n"
@@ -62,20 +49,27 @@ filetype plugin indent on
 " ==========================
 " SETTINGS
 " ==========================
-colorscheme gruvbox
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme tender
 set background=dark
 
- " highlight Normal ctermbg=none
- " highlight NonText ctermbg=none
- " 
- " highlight Normal guibg=none
- " highlight NonText guibg=none
+let g:lucius_style = 'black'
+let g:lucius_contrast = 'low'
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
 
-if has('gui_running')
-  set guifont=PragmataPro\ for\ Powerline:h11
-  set guioptions-=r
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
 endif
+
+let g:enable_bold_font = 1
+let g:rehash256 = 1
 
 set vb t_vb=               " Turn off beep
 set lazyredraw             " Don't redraw during macro execution
@@ -117,11 +111,14 @@ tnoremap <Esc> <C-\><C-n>
 " neoterm configuration
 let g:neoterm_position = 'vertical'
 
+let g:indentLine_color_term = 1
+let g:indentLine_char = '|'
+
 command! Ttrb :T env PARTIAL=false TRUNCATE=true COUNTRIES=nl bundle exec rails runner t.rb; and time env PARTIAL=true TRUNCATE=false COUNTRIES=de bundle exec rails runner t.rb
 nnoremap <silent> ,th :Ttrb<cr>
 
 " Show “invisible” characters
-set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
@@ -135,23 +132,8 @@ let g:netrw_list_hide  = "\.git,\.DS_Store"
 let g:netrw_banner     = 0
 let g:netrw_localrmdir='rm -r'
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" Colorthings
-let g:airline_theme = 'gruvbox'
-let g:airline_powerline_fonts = 1
-
 set formatprg=par\ -w80\ -q
+
 
 " ==========================
 " AUTOCOMMANDS
@@ -243,7 +225,6 @@ map <leader>m :vsplit %%
 map <leader>n :split %%
 
 let g:pencil_gutter_color = 1      " 0=mono (def), 1=color
-let g:racer_cmd = "/Users/peterderuijter/.cargo/bin/racer"
 
 map <leader>l :set list!<CR>
 map <leader>w :set wrap!<CR>
@@ -298,5 +279,3 @@ if executable('pt')
   let g:unite_source_grep_encoding = 'utf-8'
 endif
 
-map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-map <Leader>cc :colorscheme = (:colorscheme == "gruvbox"? "papercolor" : "gruvbox" )<CR>

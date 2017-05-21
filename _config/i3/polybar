@@ -1,5 +1,5 @@
 [colors]
-background = #000000FF
+background = #AA000000
 # background-alt = #000000FF
 # foreground = #c5c8c6
 # foreground = #000000
@@ -9,7 +9,7 @@ primary = #a54242
 secondary = #5f819d
 alert = #a54242
 
-background-alt = #000000FF
+background-alt = #44000000
 # foreground-alt= #c82868
 black = #000000
 red = #a54242

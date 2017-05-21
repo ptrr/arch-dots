@@ -5,7 +5,7 @@
 # e: diki1aap@gmail.com
 # dikiaap @ freenode & github
 
-font pango:Hack 8
+font pango:PragmataPro for Powerline 8
 
 # use win key
 set $mod Mod4
@@ -16,7 +16,7 @@ set $down   k
 set $up     l
 set $right  semicolon
 
-gaps inner 10
+gaps inner 2
 gaps outer 2
 
 # use Mouse+$mod to drag floating windows to their wanted position
@@ -139,7 +139,8 @@ bindsym $mod+Shift+9 move container to workspace $WS9
 bindsym $mod+Shift+0 move container to workspace $WS0
 
 # startup applications
-exec --no-startup-id xautolock -time 10 -locker i3lock-fancy
+#exec --no-startup-id xautolock -time 10 -locker i3lock-fancy
+exec --no-startup-id xautolock -time 10 -locker i3lock
 exec --no-startup-id nm-applet
 # exec --no-startup-id rofi -key-window mod4+Tab -lines 3 -eh 2 -bg "#222222" -hlbg "#2B83A6" -bc "#2B83A6" -opacity "100" -bw 3 -font "Source Sans Pro 11" -separator-style none -hide-scrollbar -fg "#FFFFFF" -hlbg-active "#2B83A6" -hlfg-active "#FFFFFF"
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
@@ -167,7 +168,8 @@ bindsym $mod+F6 workspace $WS6; exec audacious
 bindsym $mod+F7 workspace $WS7; exec gcolor2
 bindsym $mod+F8 workspace $WS8; exec telegram
 bindsym Print                   exec gnome-screenshot
-bindsym $mod+Shift+x            exec "i3lock-fancy -gp -t 'Fuck off' -- scrot"
+#bindsym $mod+Shift+x            exec "i3lock-fancy -gp -t 'Fuck off' -- scrot"
+bindsym $mod+Shift+x            exec "i3lock -i ~/Pictures/lockgroot.png"
 
 # volume
 bindsym XF86AudioLowerVolume    exec amixer -q set Master 3%- unmute
