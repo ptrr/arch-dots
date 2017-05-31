@@ -23,6 +23,7 @@ call vundle#rc()
 " Do these first, because other plugins depend on them
 Bundle 'gmarik/vundle'
 
+Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'gkz/vim-ls'
@@ -37,6 +38,9 @@ Bundle 'vim-scripts/tir_black'
 Bundle 'frankier/neovim-colors-solarized-truecolor-only'
 Bundle 'morhetz/gruvbox'
 Bundle 'jacoborus/tender.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 if needsToInstallBundles == 1
   echo "\nInstalling Bundles, please ignore key map error messages\n"
@@ -52,9 +56,6 @@ filetype plugin indent on
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 colorscheme tender
 set background=dark
-
-let g:lucius_style = 'black'
-let g:lucius_contrast = 'low'
 
 " The Silver Searcher
 if executable('ag')
@@ -87,7 +88,7 @@ set directory=~/.vim/swap/ " Keep swap files in a central location
 set undofile               " Keep undo history even after closing Vim
 set undodir=~/.vim/undo    " Where to store undo history
 set timeoutlen=500         " Don't wait so long for ambiguous leader keys
-set noesckeys              " Get rid of the delay when hitting esc!
+" set noesckeys              " Get rid of the delay when hitting esc!
 set gdefault               " assume the /g flag on :s substitutions to replace all matches in a line
 set colorcolumn=80
 set linespace=5
@@ -111,9 +112,6 @@ tnoremap <Esc> <C-\><C-n>
 " neoterm configuration
 let g:neoterm_position = 'vertical'
 
-let g:indentLine_color_term = 1
-let g:indentLine_char = '|'
-
 command! Ttrb :T env PARTIAL=false TRUNCATE=true COUNTRIES=nl bundle exec rails runner t.rb; and time env PARTIAL=true TRUNCATE=false COUNTRIES=de bundle exec rails runner t.rb
 nnoremap <silent> ,th :Ttrb<cr>
 
@@ -131,6 +129,9 @@ let ruby_operators = 1    " Highlight Ruby operators
 let g:netrw_list_hide  = "\.git,\.DS_Store"
 let g:netrw_banner     = 0
 let g:netrw_localrmdir='rm -r'
+
+let g:airline_theme='tender'
+let g:airline_powerline_fonts = 1
 
 set formatprg=par\ -w80\ -q
 

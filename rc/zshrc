@@ -23,8 +23,7 @@ fi
 
 for PARENT_DIR in ${PROJECT_PARENT_DIRS[@]} ; do
   if [ -d "$PARENT_DIR" ]; then
-    for PROJECT_DIR in $(/bin/ls $PARENT_DIR); do
-      if [[ ! -z `which $PROJECT_DIR 2> /dev/null` ]]; then
+    for PROJECT_DIR in $(/bin/ls $PARENT_DIR); do if [[ ! -z `which $PROJECT_DIR 2> /dev/null` ]]; then
         if [ -d "$PARENT_DIR/$PROJECT_DIR" ]; then
           alias "$PROJECT_DIR"="cd $PARENT_DIR/$PROJECT_DIR"
         fi
@@ -52,7 +51,8 @@ alias s88='bers -p 8080'
 
 alias todo='$EDITOR ~/.todo' 
 alias hark='be rake'
-alias vim='nvim'
+alias ov='/bin/vim'
+alias vim='/bin/nvim'
 
 alias acrec='ACRE_ENV=production python'
 alias acres='ACRE_ENV=production gunicorn acre:acre_app -c server.py -b 0.0.0.0:5000'

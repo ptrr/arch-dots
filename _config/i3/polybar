@@ -1,21 +1,21 @@
 [colors]
-background = #AA000000
+background = #282828
 # background-alt = #000000FF
 # foreground = #c5c8c6
 # foreground = #000000
-foreground = #66FFFFFF
+foreground = #eeeeee
 foreground-alt = #55
-primary = #a54242
-secondary = #5f819d
+primary = #c5152f
+secondary = #c9d05c
 alert = #a54242
 
-background-alt = #44000000
+background-alt = #303030
 # foreground-alt= #c82868
 black = #000000
-red = #a54242
-green = #8c9440
-orange = #d55600
-blue = #61AEEE
+red = #c5152f
+green = #c9d05c
+orange = #ffc24b
+blue = #b3deef
 magenta = #db4041
 cyan = #56B6C2
 yellow = #de935f
@@ -47,22 +47,21 @@ border-bottom-size = 2
 border-bottom-color = #000000FF
 
 spacing = 1
-padding-left = 0
+padding-left = 2
 padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
 font-0 = FontAwesome:size=9;0
 font-1 = PragmataPro for Powerline:pixelsize=9;0
-
 modules-left = i3
 modules-center = xwindow
-modules-right = wifi backlight volume xkeyboard battery date powermenu
+modules-right = cpu wifi backlight volume xkeyboard battery date powermenu
 
 tray-position = right
 tray-padding = 2
 tray-transparent = true
-tray-background = #0063ffAA
+tray-background = #63ffAA
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -192,14 +191,14 @@ label-disconnected-foreground = ${colors.red}
 type = internal/xwindow
 label = %title:0:50:...%
 label-maxlen = 50
-format-underline = ${colors.primary}
+# format-underline = ${colors.primary}
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-underline = ${colors.secondary}
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 
 label-layout = %layout%
@@ -301,18 +300,42 @@ bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.blue}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
 [module/cpu]
 type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage%
+interval = 0.5
+format = <label> <ramp-coreload>
+label = CPU
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = ${colors.green}
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = ${colors.green}
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = ${colors.orange}
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = ${colors.orange}
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = ${colors.orange}
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = ${colors.red}
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = ${colors.red}
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = ${colors.red}
+
 
 [module/memory]
 type = internal/memory
@@ -403,29 +426,38 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
-adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.yellow}
-
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-full = <ramp-capacity> <label-full>
+format-underline = ${colors.yellow}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${colors.red}
+ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${colors.orange}
+ramp-capacity-3 = 
+ramp-capacity-3-foreground = ${colors.green}
+ramp-capacity-4 = 
+ramp-capacity-4-foreground = ${colors.green}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+bar-capacity-width = 12
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 3
+bar-capacity-empty = █
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = #44ffffff
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-framerate = 750
 
 [module/temperature]

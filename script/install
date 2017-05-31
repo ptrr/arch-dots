@@ -25,5 +25,7 @@ done
 echo "Symlinking configfiles"
 ln -fs /home/peterderuijter/.dotfiles/_config/i3 /home/peterderuijter/.config/
 ln -fs /home/peterderuijter/.dotfiles/_config/nvim /home/peterderuijter/.config/
+ln -fs /home/peterderuijter/.dotfiles/_config/nvim/init.vim /home/peterderuijter/.vimrc
+ln -fs /home/peterderuijter/.dotfiles/_config/termite /home/peterderuijter/.config/
 
 echo "Done."
